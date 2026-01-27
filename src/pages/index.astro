@@ -1,5 +1,14 @@
 ---
 
+const loadFAQs = async () => {
+	const res = await fetch(`${import.meta.env.PUBLIC_COCKPIT_API}/content/items/faq`)
+	const data = await res.json();
+
+	console.log(data)
+	return data
+}
+
+const FAQs = await loadFAQs()
 ---
 
 <html lang="en">
@@ -13,5 +22,6 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		{ FAQs.map((faq) => <div>{ `Question: ${faq.question} Answer: ${faq.answer}` }</div> ) }
 	</body>
 </html>
