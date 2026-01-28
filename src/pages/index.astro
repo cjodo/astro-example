@@ -1,10 +1,14 @@
 ---
-import { loadFAQs } from "../loaders/loadFAQs"
+import { YouTube } from "astro-embed"
+import { loadFAQs } from "../loaders"
 import Layout from "../layouts/Layout.astro"
 const FAQs = await loadFAQs()
 ---
 
 <Layout>
-		<h1>Astro</h1>
+	<main class="max-w-6xl mx-auto">
+		<h1 >Astro</h1>
 		{ FAQs.map((faq) => <div>{ `Question: ${faq.question} Answer: ${faq.answer}` }</div> ) }
+		<YouTube id="https://youtu.be/6RzUmbe-hk0" />
+	</main>
 </Layout>

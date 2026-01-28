@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css"
+import cockpit from "../lib/cockpit"
+
+const siteSettings = await cockpit.getSingleton("siteSettings")
 ---
 
 <html lang="en">
@@ -9,7 +12,7 @@ import "../styles/global.css"
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{ siteSettings.title }</title>
 	</head>
 	<body>
 		<slot />
