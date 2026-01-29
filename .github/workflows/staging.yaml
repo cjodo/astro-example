@@ -25,9 +25,9 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ftp.staging.ahas.ca
+          server: ftp.ahas.ca
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: dist/
-          server-dir: /
+          server-dir: /staging/
 
