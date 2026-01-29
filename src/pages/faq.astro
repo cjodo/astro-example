@@ -1,19 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { Accordion } from "@/components/starwind/accordion"
 import { FAQList } from "@/components/FAQ/FAQList"
 
-type FAQ = {
-	question: string;
-	answer: string;
-}
 ---
 
 <Layout>
 	<div class="">
-		<Accordion class="max-w-[900px] mx-auto p-5" type="multiple" id="faq-accordion">
-			<FAQList client:load />
-		</Accordion>
+		<FAQList client:load />
 	</div>
 </Layout>
 

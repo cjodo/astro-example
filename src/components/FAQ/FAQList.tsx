@@ -1,6 +1,5 @@
 // src/components/FAQ/FAQList.tsx
-import { h } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState } from "react";
 import { FAQItem } from "./FAQItem";
 import { loadFAQs, type FAQ } from "@/loaders/loadFAQs";
 
