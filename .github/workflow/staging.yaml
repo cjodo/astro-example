@@ -1,0 +1,31 @@
+name: Staging Branch
+
+on:
+  push:
+    branches:
+      - staging
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v4
+
+        - uses: actions/setup-node@v4
+
+          with:
+            node-version: 20
+
+        - run: npm ci
+        - run: npm run build
+
+        - name: Deploy via FTP
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+          with:
+            server: ftp.ahas.ca
+            username: ${{ secrets.FTP_USER }}
+            password: ${{ secrets.FTP_PASS }}
+            local-dir: dist/
+            server-dir: public_html/staging.ahas.ca/
+
