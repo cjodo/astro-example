@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: dist/
-          server-dir: public_html/staging.ahas.ca/
+          server-dir: staging.ahas.ca/
 
